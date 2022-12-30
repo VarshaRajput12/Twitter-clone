@@ -20,7 +20,7 @@ body{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr min-content ;
-    /* display: none; */
+    display: none;
 }
 
 i{
@@ -209,6 +209,7 @@ i{
     grid-template-columns: minmax(5rem, 1fr) 2fr minmax(5rem, 1fr);
     grid-template-rows: repeat(2, min-content) 1fr;
     grid-row-gap: 1.5rem;
+    display: none;
 }
 
 .login_page_nav{
@@ -276,4 +277,80 @@ position: relative;
     display: grid;
     grid-template-columns: 10rem 8fr;
     grid-template-rows: 2fr 1fr;
+    box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.3);
+}
+
+.login_content{
+ grid-column:  2/-1;
+ grid-row: 1/2;
+ padding: 5rem 0 1rem 0;
+}
+
+.login_content h2{
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+}
+.login_form{
+    display: flex;
+    flex-direction: column;
+}
+.login_form input:not(.login_form_checkbox){
+    width: 30rem;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+    border: 0.1rem;
+    padding-left: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    transition: background-color 0.3s;
+}
+.login_form input:focus{
+    background-color: #d9ebf7;
+}
+.login_form div{
+    margin-top: 2rem;
+}
+.login_form button{
+    padding: 1rem 1.5rem;
+    background-color: #1aa1f5;
+    color: #fff;
+    border-radius: 4rem;
+    border: 0.1rem solid #1aa1f5;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.login_form label{
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-right: 1rem;
+}
+.login_form a{
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #1aa1f5;
+}
+.login .login_footer{
+    grid-column: 1/-1;
+    grid-row: 2/-1;
+    background-color: #edf3f7;
+    padding-left: 10rem;
+    padding-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.login_footer p{
+ font-size: 1.6rem;
+ font-weight: 300;
+ margin: 0.5rem 0;
+}
+
+.login_footer a{
+ text-decoration: none;
+ color: #1aa1f5;
 }
