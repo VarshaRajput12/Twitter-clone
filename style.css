@@ -21,6 +21,7 @@ body{
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr min-content ;
     display: grid;
+  
 }
 
 i{
@@ -218,6 +219,7 @@ i{
     background-color: #fff;
     padding: 2.5rem 0;
     box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
 }
 
 .login_page_nav ul{
@@ -295,6 +297,7 @@ position: relative;
     flex-direction: column;
 }
 .login_form input:not(.login_form_checkbox){
+    background-color: #ecf3f9;
     width: 30rem;
     height: 3.5rem;
     margin-bottom: 1rem;
@@ -359,7 +362,33 @@ position: relative;
 
 /* -------login modal----- */
 .login_modal{
-    
+   position: fixed;
+   top: 11.5rem;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: #fff;
+   width: 70rem;
+   padding: 2rem;
+   text-align: center;
+   box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+   border-radius: 0 0 1rem 1rem;
+   display: none;
+
+}
+
+.login_modal i{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.3rem;
+    color: #868383;
+    cursor: pointer;
+}
+
+.login_modal p{
+    margin: 2rem 1rem 0 1rem;
+    font-size: 1.6rem;
+    color: #868383;
 }
 
 
