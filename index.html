@@ -96,10 +96,18 @@
         <div class="login_content">
           <h2>Log In To Twitter</h2>
           <form class="login_form">
-            <input type="text" class="login_user_info" placeholder="Phone, Email, or Username" />
-            <input type="password" class="login_password" placeholder="Password" />
+            <input
+              type="text"
+              class="login_user_info"
+              placeholder="Phone, Email, or Username"
+            />
+            <input
+              type="password"
+              class="login_password"
+              placeholder="Password"
+            />
             <div>
-              <button type="button  " class="login_form_btn ">Log In</button>
+              <button type="button  " class="login_form_btn">Log In</button>
               <input type="checkbox" class="login_form_checkbox" id="check" />
               <label for="check">Remember Me</label>
               <a href="#">Forget Password?</a>
@@ -119,18 +127,19 @@
     <!-- login modal -->
 
     <div class="login_modal">
-        <i class="fa fa-times"></i>
-        <p>The usename and password you entered did not match our records. please double check and try again.
-        </p>
+      <i class="fa fa-times"></i>
+      <p>
+        The usename and password you entered did not match our records. please
+        double check and try again.
+      </p>
     </div>
-
 
     <!--end of login modal -->
 
     <!-- news feed page -->
 
     <section class="feeds_page">
-      <nav class="feeds_nav">
+      <nav class="feeds_nav dark_mode1">
         <div class="icons">
           <a href="#" class="active"> <i class="fa fa-home"></i> </a>
           <a href="#"><i class="fa fa-hashtag"></i></a>
@@ -142,7 +151,7 @@
           <input
             type="text"
             placeholder="Search Twitter"
-            class="search_bar_input"
+            class="search_bar_input dark_mode2 light_text border"
           />
         </div>
 
@@ -153,201 +162,348 @@
               alt="user image"
             />
           </div>
-          <a href="#" class="user_link">Suhana</a>
+          <a href="#" class="user_link light_text">Suhana</a>
           <i class="fa fa-chevron-down"></i>
         </div>
       </nav>
-      <div class="feeds_content">
-        <div class="feeds_header">
-          <div class="header_top">
-            <h4>Home</h4>
+      <div class="feeds_content dark_mode2">
+        <div class="feeds_header dark_mode1">
+          <div class="header_top border">
+            <h4 class="light_text">Home</h4>
             <i class="fa-regular fa-star"></i>
           </div>
 
-          <div class="header_post">
+          <div class="header_post dark_mode1 border">
             <div class="header_img_wrapper">
               <img
                 src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                alt="user"/>
+                alt="user"
+              />
             </div>
-            <input type="text" placeholder="What's happening" />
+            <input type="text" placeholder="What's happening" class="dark_mode2 light_text border" />
             <i class="fa fa-image"></i>
             <i class="fa fa-camera"></i>
             <i class="fa fa-chart-bar"></i>
           </div>
         </div>
 
-        <div class="posts">
-            <div class="post">
-                <div class="user_avatar">
-                    <img src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTc0fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="user">
-                </div>
-                <div class="post_content">
-                    <div class="post_user_info">
-                        <h4>Harry</h4>
-                        <i class="fa fa-check-circle"></i>
-                        <span>@harry123</span>
-                    </div>
-                    <p class="post_text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos laboriosam provident pariatur mollitia natus odit fuga porro recusandae eaque similique nesciunt molestiae architecto quia quae hic, in molestias quas qui asperiores cum ad. Atque delectus.
-                    </p>
-                    <div class="post_img">
-                        <img src="https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTk3fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="post_img">
-                    </div>
-                    <div class="post_icons">
-                        <i class="fa fa-comment"></i>
-                        <i class="fa fa-retweet"></i>
-                        <i class="fa fa-heart"></i>
-                        <i class="fa fa-share-alt"></i>
-                    </div>
-                </div>
+        <div class="posts dark_mode1">
+          <div class="post border">
+            <div class="user_avatar">
+              <img
+                src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTc0fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                alt="user"
+              />
             </div>
-
-
-            <div class="post">
-                <div class="user_avatar">
-                    <img src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTc0fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="user">
-                </div>
-                <div class="post_content">
-                    <div class="post_user_info">
-                        <h4>Harry</h4>
-                        <i class="fa fa-check-circle"></i>
-                        <span>@harry123</span>
-                    </div>
-                    <p class="post_text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos laboriosam provident pariatur mollitia natus odit fuga porro recusandae eaque similique nesciunt molestiae architecto quia quae hic, in molestias quas qui asperiores cum ad. Atque delectus.
-                    </p>
-                    <div class="post_img">
-                        <img src="https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTk3fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="post_img">
-                    </div>
-                    <div class="post_icons">
-                        <i class="fa fa-comment"></i>
-                        <i class="fa fa-retweet"></i>
-                        <i class="fa fa-heart"></i>
-                        <i class="fa fa-share-alt"></i>
-                    </div>
-                </div>
+            <div class="post_content">
+              <div class="post_user_info light_text">
+                <h4>Harry</h4>
+                <i class="fa fa-check-circle"></i>
+                <span>@harry123</span>
+              </div>
+              <p class="post_text light_text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                laboriosam provident pariatur mollitia natus odit fuga porro
+                recusandae eaque similique nesciunt molestiae architecto quia
+                quae hic, in molestias quas qui asperiores cum ad. Atque
+                delectus.
+              </p>
+              <div class="post_img">
+                <img
+                  src="https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTk3fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                  alt="post_img"
+                />
+              </div>
+              <div class="post_icons">
+                <i class="fa fa-comment"></i>
+                <i class="fa fa-retweet"></i>
+                <i class="fa fa-heart"></i>
+                <i class="fa fa-share-alt"></i>
+              </div>
             </div>
+          </div>
 
-            <div class="post">
-                <div class="user_avatar">
-                    <img src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTc0fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="user">
-                </div>
-                <div class="post_content">
-                    <div class="post_user_info">
-                        <h4>Harry</h4>
-                        <i class="fa fa-check-circle"></i>
-                        <span>@harry123</span>
-                    </div>
-                    <p class="post_text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos laboriosam provident pariatur mollitia natus odit fuga porro recusandae eaque similique nesciunt molestiae architecto quia quae hic, in molestias quas qui asperiores cum ad. Atque delectus.
-                    </p>
-                    <div class="post_img">
-                        <img src="https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTk3fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="post_img">
-                    </div>
-                    <div class="post_icons">
-                        <i class="fa fa-comment"></i>
-                        <i class="fa fa-retweet"></i>
-                        <i class="fa fa-heart"></i>
-                        <i class="fa fa-share-alt"></i>
-                    </div>
-                </div>
+          <div class="post border">
+            <div class="user_avatar">
+              <img
+                src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTc0fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                alt="user"
+              />
             </div>
+            <div class="post_content">
+              <div class="post_user_info light_text">
+                <h4>Harry</h4>
+                <i class="fa fa-check-circle"></i>
+                <span>@harry123</span>
+              </div>
+              <p class="post_text light_text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                laboriosam provident pariatur mollitia natus odit fuga porro
+                recusandae eaque similique nesciunt molestiae architecto quia
+                quae hic, in molestias quas qui asperiores cum ad. Atque
+                delectus.
+              </p>
+              <div class="post_img">
+                <img
+                  src="https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTk3fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                  alt="post_img"
+                />
+              </div>
+              <div class="post_icons">
+                <i class="fa fa-comment"></i>
+                <i class="fa fa-retweet"></i>
+                <i class="fa fa-heart"></i>
+                <i class="fa fa-share-alt"></i>
+              </div>
+            </div>
+          </div>
 
-            <div class="post">
-                <div class="user_avatar">
-                    <img src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTc0fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="user">
-                </div>
-                <div class="post_content">
-                    <div class="post_user_info">
-                        <h4>Harry</h4>
-                        <i class="fa fa-check-circle"></i>
-                        <span>@harry123</span>
-                    </div>
-                    <p class="post_text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos laboriosam provident pariatur mollitia natus odit fuga porro recusandae eaque similique nesciunt molestiae architecto quia quae hic, in molestias quas qui asperiores cum ad. Atque delectus.
-                    </p>
-                    <div class="post_img">
-                        <img src="https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTk3fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="post_img">
-                    </div>
-                    <div class="post_icons">
-                        <i class="fa fa-comment"></i>
-                        <i class="fa fa-retweet"></i>
-                        <i class="fa fa-heart"></i>
-                        <i class="fa fa-share-alt"></i>
-                    </div>
-                </div>
+          <div class="post border">
+            <div class="user_avatar">
+              <img
+                src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTc0fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                alt="user"
+              />
             </div>
+            <div class="post_content">
+              <div class="post_user_info light_text">
+                <h4>Harry</h4>
+                <i class="fa fa-check-circle"></i>
+                <span>@harry123</span>
+              </div>
+              <p class="post_text light_text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                laboriosam provident pariatur mollitia natus odit fuga porro
+                recusandae eaque similique nesciunt molestiae architecto quia
+                quae hic, in molestias quas qui asperiores cum ad. Atque
+                delectus.
+              </p>
+              <div class="post_img">
+                <img
+                  src="https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTk3fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                  alt="post_img"
+                />
+              </div>
+              <div class="post_icons">
+                <i class="fa fa-comment"></i>
+                <i class="fa fa-retweet"></i>
+                <i class="fa fa-heart"></i>
+                <i class="fa fa-share-alt"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="post border">
+            <div class="user_avatar">
+              <img
+                src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTc0fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                alt="user"
+              />
+            </div>
+            <div class="post_content">
+              <div class="post_user_info light_text">
+                <h4>Harry</h4>
+                <i class="fa fa-check-circle"></i>
+                <span>@harry123</span>
+              </div>
+              <p class="post_text light_text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                laboriosam provident pariatur mollitia natus odit fuga porro
+                recusandae eaque similique nesciunt molestiae architecto quia
+                quae hic, in molestias quas qui asperiores cum ad. Atque
+                delectus.
+              </p>
+              <div class="post_img">
+                <img
+                  src="https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTk3fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                  alt="post_img"
+                />
+              </div>
+              <div class="post_icons">
+                <i class="fa fa-comment"></i>
+                <i class="fa fa-retweet"></i>
+                <i class="fa fa-heart"></i>
+                <i class="fa fa-share-alt"></i>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="follow">
-            <h3 class="follow_heading">Who to follow</h3>
-            <div class="follow_users">
-                <div class="follow_user_img">
-                    <img src="https://images.unsplash.com/photo-1547147607-6eab7b49f3ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjg3fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="follow" width="40px">
-                </div>
-                <div class="follow_user_info">
-                    <h4>Anna Smith</h4>
-                    <p>@annasmith</p>
-                </div>
-                <button type="button" class="follow_btn">Follow</button>
+        <div class="follow dark_mode1">
+          <h3 class="follow_heading light_text border">Who to follow</h3>
+          <div class="follow_users border">
+            <div class="follow_user_img">
+              <img
+                src="https://images.unsplash.com/photo-1547147607-6eab7b49f3ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjg3fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                alt="follow"
+                width="40px"
+              />
             </div>
-
-            <div class="follow_users">
-                <div class="follow_user_img">
-                    <img src="https://images.unsplash.com/photo-1608668648240-eab177307a4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDQ4fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="follow" width="40px">
-                </div>
-                <div class="follow_user_info">
-                    <h4>Anna Smith</h4>
-                    <p>@annasmith</p>
-                </div>
-                <button type="button" class="follow_btn">Follow</button>
+            <div class="follow_user_info light_text">
+              <h4>Anna Smith</h4>
+              <p>@annasmith</p>
             </div>
+            <button type="button" class="follow_btn dark_mode2">Follow</button>
+          </div>
 
-            <div class="follow_users">
-                <div class="follow_user_img">
-                    <img src="https://images.unsplash.com/photo-1542206395-9feb3edaa68d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="follow" width="40px">
-                </div>
-                <div class="follow_user_info">
-                    <h4>Anna Smith</h4>
-                    <p>@annasmith</p>
-                </div>
-                <button type="button" class="follow_btn">Follow</button>
+          <div class="follow_users border">
+            <div class="follow_user_img">
+              <img
+                src="https://images.unsplash.com/photo-1608668648240-eab177307a4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDQ4fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                alt="follow"
+                width="40px"
+              />
             </div>
-
-            <div class="follow_users">
-                <div class="follow_user_img">
-                    <img src="https://images.unsplash.com/photo-1547624643-3bf761b09502?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDI3fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="follow" width="40px">
-                </div>
-                <div class="follow_user_info">
-                    <h4>Anna Smith</h4>
-                    <p>@annasmith</p>
-                </div>
-                <button type="button" class="follow_btn">Follow</button>
+            <div class="follow_user_info light_text">
+              <h4>Anna Smith</h4>
+              <p>@annasmith</p>
             </div>
+            <button type="button" class="follow_btn dark_mode2">Follow</button>
+          </div>
 
-            
-            <div class="follow_link">
-                <a href="#">Show more</a>
+          <div class="follow_users border">
+            <div class="follow_user_img">
+              <img
+                src="https://images.unsplash.com/photo-1542206395-9feb3edaa68d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                alt="follow"
+                width="40px"
+              />
             </div>
+            <div class="follow_user_info light_text">
+              <h4>Anna Smith</h4>
+              <p>@annasmith</p>
+            </div>
+            <button type="button" class="follow_btn dark_mode2">Follow</button>
+          </div>
 
-            <footer class="follow_footer">
-                <ul>
-                    <li><a href="#">Terms</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Cookies</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">More</a></li>
-                </ul>
-            </footer>
+          <div class="follow_users border">
+            <div class="follow_user_img">
+              <img
+                src="https://images.unsplash.com/photo-1547624643-3bf761b09502?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDI3fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                alt="follow"
+              />
+            </div>
+            <div class="follow_user_info light_text">
+              <h4>Anna Smith</h4>
+              <p>@annasmith</p>
+            </div>
+            <button type="button" class="follow_btn dark_mode2">Follow</button>
+          </div>
+
+          <div class="follow_link">
+            <a href="#">Show more</a>
+          </div>
+
+          <footer class="follow_footer dark_mode2">
+            <ul>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Cookies</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">More</a></li>
+            </ul>
+          </footer>
         </div>
       </div>
 
       <!-- ---post button--- -->
 
       <button type="button" class="post_btn">
-        +<i class="fa fa-feather-alt"></i> Post 
+        +<i class="fa fa-feather-alt"></i> Post
       </button>
+
+      <!-- post modal -->
+
+      <div class="modal_wrapper">
+        <div class="modal dark_mode1">
+          <div class="modal_header border">
+            <i class="fa fa-times"></i>
+            <button type="button">Post</button>
+          </div>
+          <div class="modal_body">
+            <div class="modal_img">
+              <img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                alt="user"
+              />
+            </div>
+            <input
+              type="text"
+              placeholder="What's happening"
+              class="modal_input dark_mode2 light_text border"
+            />
+            <i class="fa fa-smile"></i>
+          </div>
+          <div class="modal_footer">
+            <div class="modal_icons">
+              <i class="fa fa-image"></i>
+              <i class="fa fa-camera"></i>
+              <i class="fa fa-chart-bar"></i>
+              <span>+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- sidebar -->
+
+      <div class="sidebar_wrapper">
+        <div class="sidebar dark_mode1">
+          <div class="sidebar_header border">
+            <h2 class="light_text">Account Info</h2>
+            <i class="fa fa-times"></i>
+          </div>
+          <div class="sidebar_user">
+            <div class="sidebar_user_img">
+              <img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                alt="user"
+              />
+            </div>
+            <span>+</span>
+          </div>
+          <div class="sidebar_user_info light_text">
+            <h4>Suhana</h4>
+            <p>@suhana12</p>
+          </div>
+          <div class="followings light_text">
+            <p class="following_paragraph"><span>811</span>Following</p>
+            <p class="following_paragraph"><span>8.8k</span>Following</p>
+          </div>
+          <div class="sidebar_list1 border">
+            <ul>
+              <li>
+                <a href="#"><i class="fa fa-user"></i> Profile</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-list-alt"></i> Lists</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-rectangle-ad"></i> Ads</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-chart-line"></i> Analytics</a>
+              </li>
+            </ul>
+          </div>
+          <div class="sidebar_list2">
+            <ul>
+              <li><a href="#">Settings and Privacy</a></li>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Log Out</a></li>
+            </ul>
+          </div>
+
+          <!-- darkmode -->
+          <div class="dark_mode">
+            <p>Dark Mode</p>
+            <div class="toggle">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- end of sidebar -->
     </section>
 
     <script src="script.js"></script>
