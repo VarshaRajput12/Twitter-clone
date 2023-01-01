@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
     <title>Twitter</title>
     <link rel="shortcut icon" href="/images/twitter-logo.png" />
     <link
@@ -140,20 +143,52 @@
 
     <section class="feeds_page">
       <nav class="feeds_nav dark_mode1">
+        <a href="#" class="dove"><i class="fa-brands fa-twitter"></i></a>
         <div class="icons">
-          <a href="#" class="active"> <i class="fa fa-home"></i> </a>
-          <a href="#"><i class="fa fa-hashtag"></i></a>
-          <a href="#"><i class="fa fa-bell"></i></a>
-          <a href="#"><i class="fa fa-envelope"></i></a>
+          <a href="#" class="active">
+            <i class="fa fa-home light_text"></i>
+            <p class="light_text">Home</p>
+          </a>
+          <a href="#"
+            ><i class="fa fa-hashtag light_text"></i>
+            <p class="light_text">Explore</p>
+          </a>
+          <a href="#"
+            ><i class="fa fa-bell light_text"></i>
+            <p class="light_text">Notifiaction</p></a
+          >
+          <a href="#"
+            ><i class="fa fa-envelope light_text"></i>
+            <p class="light_text">Messages</p></a
+          >
+          <a href="#"
+            ><i class="fa-regular fa-bookmark light_text"></i>
+            <p class="light_text">Bookmarks</p></a
+          >
+          <a href="#"
+            ><i class="fa-solid fa-clipboard-list light_text"></i>
+            <p class="light_text">Lists</p></a
+          >
+          <a href="#" id="profile"
+            ><i class="fa-regular fa-user light_text"></i>
+            <p class="light_text">Profile</p></a
+          >
+          <a href="#" id="more"
+            ><i class="fa-solid fa-ellipsis light_text"></i>
+            <p class="light_text">More</p></a
+          >
         </div>
-        <div class="search_bar">
+        <!-- ---post button--- -->
+
+        <button type="button" class="post_btn">Tweet</button>
+        <!-- <div class="search_bar">
           <i class="fa fa-search"></i>
           <input
             type="text"
             placeholder="Search Twitter"
             class="search_bar_input dark_mode2 light_text border"
           />
-        </div>
+        </div> -->
 
         <div class="user">
           <div class="user_img_wrapper">
@@ -162,8 +197,10 @@
               alt="user image"
             />
           </div>
-          <a href="#" class="user_link light_text">Suhana</a>
-          <i class="fa fa-chevron-down"></i>
+          <a href="#" class="user_link light_text"
+            ><p>Suhana</p>
+            <span>@suhana12</span><i class="fa-solid fa-ellipsis light_text"></i
+          ></a>
         </div>
       </nav>
       <div class="feeds_content dark_mode2">
@@ -410,12 +447,6 @@
         </div>
       </div>
 
-      <!-- ---post button--- -->
-
-      <button type="button" class="post_btn">
-        +<i class="fa fa-feather-alt"></i> Post
-      </button>
-
       <!-- post modal -->
 
       <div class="modal_wrapper">
@@ -489,20 +520,26 @@
               </li>
             </ul>
           </div>
-          <div class="sidebar_list2">
-            <ul>
-              <li><a href="#">Settings and Privacy</a></li>
-              <li><a href="#">Help Center</a></li>
-              <li><a href="#">Log Out</a></li>
-            </ul>
-          </div>
+        </div>
+      </div>
 
-          <!-- darkmode -->
-          <div class="dark_mode">
-            <p>Dark Mode</p>
-            <div class="toggle">
-              <div class="circle"></div>
-            </div>
+      <!-- settings -->
+
+      <div class="settigs_wrapper dark_mode1">
+        <div class="sidebar_list2">
+          <i class="fa fa-times light_text"></i>
+          <ul>
+            <li><a href="#"><p class="light_text">Settings and Privacy</p></a></li>
+            <li><a href="#"><p class="light_text">Help Center</p></a></li>
+            <li><a href="#"><p class="light_text">Log Out</p></a></li>
+          </ul>
+        </div>
+
+        <!-- darkmode -->
+        <div class="dark_mode">
+          <p class="light_text">Dark Mode</p>
+          <div class="toggle">
+            <div class="circle"></div>
           </div>
         </div>
       </div>

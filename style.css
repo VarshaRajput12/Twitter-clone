@@ -30,7 +30,8 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr min-content;
-  display: grid;
+  display: none;
+  /* =========================== */
 }
 
 i {
@@ -231,7 +232,7 @@ i {
   margin: auto;
   display: flex;
   align-items: flex-end;
-  list-style-type: none;
+  list-style: none;
 }
 
 .login_page_nav a {
@@ -343,7 +344,6 @@ i {
   grid-row: 2/-1;
   background-color: #edf3f7;
   padding-left: 10rem;
-  padding-left: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -396,42 +396,83 @@ i {
 .feeds_page {
   width: 100%;
   height: 100vh;
-  display: none;
+  display: block;
 }
 
 .feeds_nav {
   position: fixed;
-  width: 100%;
-  height: 6.5rem;
+  width: 25.5%;
+  height: 100vh;
   background-color: var(--second-color);
   display: flex;
-  justify-content: center;
-  box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+  border-right: 0.1rem solid var(--border-color);
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3); */
 }
+
+.feeds_nav .dove i {
+  font-size: 3rem;
+  margin: 2rem 0 0 15rem ;
+  border-radius: 3rem;
+  border-radius: 50%;
+  padding: 1rem;
+  border-radius: 50%;
+  color: #1aa1f5;
+}
+
+.dove i:hover{
+  background-color:#dce7f3 ;
+}
+
 
 .icons {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  margin-left: 15rem;
 }
 
 .icons a {
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  margin-right: 7rem;
-  font-size: 2.5rem;
-  color: #9e9a9e;
+  line-height: 5rem;
+  font-size: 2rem;
+  color: #171717;
+  margin: 0.5rem 0;
+  padding: 0 1rem;
+  border-radius: 3rem;
+}
+
+/* .icons a:hover{
+  background-color:#f1f3f5 ;
+} */
+
+.icons a i{
+  margin-right: 2rem;
 }
 
 .icons .active {
-  color: var(--main-color);
+  color: black;
+  font-weight: bolder;
 }
 
-.search_bar {
+.icons .fa-ellipsis{
+  font-size: 1.5rem;
+  border: 3px solid;
+  padding: 0.1rem 0.2rem;
+  border-radius: 50%;
+  margin-left: -0.5rem;
+}
+
+/* .search_bar {
   display: flex;
   align-items: center;
   position: relative;
-}
+} */
 
-.search_bar_input {
+/* .search_bar_input {
   width: 35rem;
   height: 3rem;
   border: 0.1rem solid #d6e1e9;
@@ -449,10 +490,10 @@ i {
   font-size: 1.6rem;
   left: 1.5rem;
   color: #9e9a9a;
-}
+} */
 
 .user {
-  margin-left: 3rem;
+  margin: 8rem 0 0 15rem;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -472,12 +513,20 @@ i {
   text-decoration: none;
   font-size: 1.8rem;
   color: #444;
+  /* text-align: center; */
+}
+.user_link .fa-ellipsis{
+ margin-left: 2rem;
+ 
+}
+.user span{
+  font-size: 1.5rem;
 }
 
-.user i {
+/* .user i {
   font-size: 1.6rem;
   color: #444;
-}
+} */
 
 /* -----------feeds content----------- */
 
@@ -485,7 +534,8 @@ i {
   display: grid;
   grid-template-columns: minmax(5rem, 1fr) 60rem 40rem minmax(5rem, 1fr);
   grid-template-rows: repeat(2, min-content);
-  padding-top: 6.5rem;
+  /* padding-top: 0rem; */
+  padding-left: 25rem;
 }
 .feeds_header {
   grid-column: 2/3;
@@ -611,8 +661,8 @@ i {
 
 .follow {
   position: fixed;
-  top: 8rem;
-  left: 57%;
+  top: 1.5rem;
+  left: 65%;
   background-color: var(--second-color);
   width: 35rem;
 }
@@ -628,6 +678,12 @@ i {
   align-items: center;
   padding: 1.5rem;
   border-bottom: 0.1rem solid var(--border-color);
+}
+
+
+.follow_users h4:hover{
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .follow_user_img {
@@ -691,18 +747,17 @@ i {
 /* -----post button---- */
 
 .post_btn {
-  position: fixed;
-  bottom: 2rem;
-  left: 70%;
-  width: 12rem;
-  padding: 1.5rem 1rem;
+  width: 20rem;
+  padding: 1.2rem 1rem;
   background-color: var(--main-color);
   color: var(--second-color);
-  font-size: 2rem;
+  font-size: 1.6rem;
+  font-weight: bolder;
   border: 0.1rem solid var(--main-color);
   border-radius: 3rem;
   box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
   cursor: pointer;
+  margin-left: 14rem;
   transition: background-color 0.3s;
 }
 
@@ -710,6 +765,43 @@ i {
   background-color: #1584c9;
 }
 
+.settigs_wrapper{
+  position: fixed;
+  top: 30rem;
+  left: 12rem;
+  padding: 2rem;
+  color: #171717;
+  background-color: var(--second-color);
+  box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
+  border-radius: 2rem;
+  width: 25rem;
+  z-index: 10;
+  display: none;
+}
+
+
+.sidebar_list2 ul {
+  list-style: none;
+  padding: 1.5rem 0;
+}
+
+.sidebar_list2 li {
+  margin-bottom: 2.5rem;
+}
+.sidebar_list2 i{
+  font-size: 2rem;
+  float: right;
+}
+
+.sidebar_list2 a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #171717;
+}
+
+.settigs_wrapper .sidebar_list2{
+  color: #10171e;
+}
 /* post modal */
 .modal_wrapper {
   position: fixed;
@@ -758,6 +850,7 @@ i {
 
 .modal_header i:hover {
   background-color: #d6e1e9;
+  
 }
 
 .modal_header button {
@@ -948,19 +1041,16 @@ i {
   border-bottom: 0.1rem solid var(--border-color);
 }
 
-.sidebar_list1 ul,
-.sidebar_list2 ul {
+.sidebar_list1 ul {
   list-style: none;
   padding: 1.5rem 0;
 }
 
-.sidebar_list1 li,
-.sidebar_list2 li {
+.sidebar_list1 li {
   margin-bottom: 2.5rem;
 }
 
-.sidebar_list1 a,
-.sidebar_list2 a {
+.sidebar_list1 a{
   text-decoration: none;
   font-size: 1.6rem;
   color: #868383;
@@ -980,7 +1070,7 @@ i {
 .dark_mode p {
   margin-right: 8rem;
   font-size: 1.6rem;
-  color: #868383;
+  color: #10171e;
 }
 .toggle {
   width: 4.5rem;
@@ -1023,4 +1113,200 @@ i {
 
 .border-color {
   border-color: #444 !important;
+}
+
+
+/* Responsive */
+
+@media only screen and (max-width: 1300px) {
+    /* main page */
+    .middle_content {
+      width: 60%;
+    }
+
+    .main_page_footer ul{
+      flex-wrap: wrap;
+    }
+
+    .main_page_footer li{
+      margin-bottom: 1rem;
+    }
+
+    /* login page */
+  .login_page_nav li, .login{
+    width: 80rem;
+  }
+  .login_modal{
+    width: 60rem;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+.main_page {
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr) min-content;
+}
+.right {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 70%;
+  margin: auto;
+}
+.right_content_form{
+  display: none;
+}
+.left{
+  grid-row: 2/3;
+}
+.left_content{
+  width: 50%;
+  margin: auto;
+}
+.middle_content i{
+  margin-top: 1em;
+}
+
+.left_content h3{
+  line-height: 2rem;
+}
+
+.main_page_footer{
+  grid-row: 3/4;
+}
+}
+
+@media only screen and (max-width:900px) {
+
+  .login_page_nav ul{
+    padding: 0 4rem;
+  }
+  .login_page_nav li, .login{
+    width: 60rem;
+  }
+  .login_modal{
+    width: 50rem;
+  }
+}
+
+@media only screen and (max-width:700px) {
+  .login_page_nav li, .login{
+    width: 50rem;
+  }
+  .login_modal{
+    width: 40rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+ .right{
+  width: 80%;
+ }
+ .middle_content i{
+  display: none;
+ }
+ .middle_content h1{
+  margin-bottom: 2rem;
+ }
+ .middle_content h4{
+  margin-bottom: 1rem;
+ }
+ .left_content{
+  width: 60%;
+ }
+ .middle_content button{
+  width: 30rem;
+}
+}
+
+@media only screen and (max-width: 600px){
+.main_page{
+  grid-template-rows: 1fr min-content;
+}
+.left{
+  display: none;
+}
+.right{
+  grid-row: 1/2;
+  width: 90%;
+}
+
+/* login page */
+.login_page_nav ul{
+  width: 40rem;
+  padding: 0 4rem;
+}
+.login{
+  width: 40rem;
+  grid-template-columns: 5rem 8fr;
+}
+
+.login_form label, .login_form a{
+  font-size: 1.4rem;
+}
+.login .login_footer{
+  padding-left: 5rem;
+}
+.login_footer p{
+  font-size: 1.4rem;
+}
+
+.login_modal{
+  width: 30rem;
+}
+
+.login_modal i{
+  top: 2.5rem;
+}
+.login_modal p{
+  font-size: 1.4rem;
+}
+}
+
+@media only screen and (max-width: 500px){
+  .middle_content{
+    font-size: 2.5rem;
+  }
+  .middle_content button{
+    width: 22rem;
+  }
+
+  /* login page */
+
+  .login_page_nav ul{
+    width: 35rem;
+  }
+  .login_form:not(.login_form_checkbox){
+    width: 20rem;
+  }
+  .login_form a{
+    display: block;
+    margin-top: 1.5rem;
+  }
+
+  
+}
+
+@media only screen and (max-width: 400px){
+  /* login page */
+
+  .login_page_nav ul{
+    width: 31.5rem;
+  }
+
+  .login_form input:not(.login_form_checkbox){
+    width:22rem ;
+  }
+  .login_page {
+    grid-template-columns: 2rem 2fr 2rem;
+  }
+  .login{
+    width: 100%;
+  }
+  .login_modal{
+    width: 25rem;
+  }
+  .login .login_footer{
+    padding: 0 5rem;
+  }
+  
 }

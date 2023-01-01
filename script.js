@@ -15,12 +15,15 @@ const postModalX = document.querySelector(".modal_header i");
 const postModalBtn = document.querySelector(".modal_header button");
 const postFooterPlus = document.querySelector(".modal_footer span");
 const modal_input = document.querySelector(".modal_input");
-const user = document.querySelector(".user");
 const sidebar = document.querySelector(".sidebar");
 const sidebar_wrapper = document.querySelector(".sidebar_wrapper");
 const xBtn = document.querySelector(".sidebar_header i");
 const toggle = document.querySelector(".toggle");
 const circle = document.querySelector(".circle");
+// const more = document.querySelector("#more");
+const profile = document.querySelector("#profile");
+const settigs_wrapper = document.querySelector(".settigs_wrapper");
+const settigs_x = document.querySelector(".sidebar_list2 i");
 
 const goToLoginPage = () => {
   mainPage.style.display = "none";
@@ -101,8 +104,18 @@ modal_input.addEventListener("blur", (e) => {
 
 // sidebar
 
-user.addEventListener("click", () => {
+more.addEventListener("click", () => {
+  settigs_wrapper.style.display = "block"
+});
+
+settigs_x.addEventListener("click", () => {
+  settigs_wrapper.style.display = "none"
+});
+
+// profile
+profile.addEventListener("click", () => {
   sidebar_wrapper.classList.add("sidebar_wrapper_display");
+ 
 });
 
 xBtn.addEventListener("click", () => {
