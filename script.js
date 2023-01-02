@@ -24,6 +24,9 @@ const circle = document.querySelector(".circle");
 const profile = document.querySelector("#profile");
 const settigs_wrapper = document.querySelector(".settigs_wrapper");
 const settigs_x = document.querySelector(".sidebar_list2 i");
+const textarea = document.querySelector(".textarea");
+const textareaBtn = document.querySelector(".bottom button");
+
 
 const goToLoginPage = () => {
   mainPage.style.display = "none";
@@ -96,11 +99,31 @@ modal_input.addEventListener("keypress", (e) => {
   }
 });
 
-modal_input.addEventListener("blur", (e) => {
+modal_input.addEventListener("keydown", (e) => {
   if (e.target.value === "") {
     changeOpacity(0.4);
   }
 });
+
+
+// feed_content textarea
+const changeOpacity2 = (x) => {
+  textareaBtn.style.opacity = x;
+};
+
+
+textarea.addEventListener("keypress", (e) => {
+  if (e.target.value !== "") {
+    changeOpacity2(1);
+  }
+});
+
+textarea.addEventListener("keydown", (e) => {
+  if (e.target.value === "") {
+    changeOpacity2(0.4);
+  }
+});
+// ============================================
 
 // sidebar
 

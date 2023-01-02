@@ -142,7 +142,7 @@
     <!-- news feed page -->
 
     <section class="feeds_page">
-      <nav class="feeds_nav dark_mode1">
+      <aside class="feeds_nav dark_mode1 border">
         <a href="#" class="dove"><i class="fa-brands fa-twitter"></i></a>
         <div class="icons">
           <a href="#" class="active">
@@ -202,12 +202,13 @@
             <span>@suhana12</span><i class="fa-solid fa-ellipsis light_text"></i
           ></a>
         </div>
-      </nav>
+      </aside>
       <div class="feeds_content dark_mode2">
         <div class="feeds_header dark_mode1">
-          <div class="header_top border">
+          <div class="header_top dark_mode1 border">
             <h4 class="light_text">Home</h4>
-            <i class="fa-regular fa-star"></i>
+            <!-- <i class="fa-regular fa-star"></i> -->
+            <img src="/images/stars.svg" alt="" width="25" />
           </div>
 
           <div class="header_post dark_mode1 border">
@@ -216,15 +217,23 @@
                 src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                 alt="user"
               />
+              <textarea
+                name=""
+                id=""
+                placeholder="What's happening?"
+                class="textarea light_text border"
+              ></textarea>
             </div>
-            <input
-              type="text"
-              placeholder="What's happening"
-              class="dark_mode2 light_text border"
-            />
-            <i class="fa fa-image"></i>
-            <i class="fa fa-camera"></i>
-            <i class="fa fa-chart-bar"></i>
+            <div class="bottom border">
+              <div class="icons">
+                <i class="fa fa-image"></i>
+                <i class="fa-solid fa-list-ul"></i>
+                <i class="fa-regular fa-face-smile"></i>
+                <i class="fa-regular fa-calendar-days"></i>
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <button type="button">Tweet</button>
+            </div>
           </div>
         </div>
 
@@ -453,7 +462,7 @@
         <div class="modal dark_mode1">
           <div class="modal_header border">
             <i class="fa fa-times"></i>
-            <button type="button">Post</button>
+            <button type="button">Tweet</button>
           </div>
           <div class="modal_body">
             <div class="modal_img">
@@ -464,7 +473,7 @@
             </div>
             <input
               type="text"
-              placeholder="What's happening"
+              placeholder="What's happening?"
               class="modal_input dark_mode2 light_text border"
             />
             <i class="fa fa-smile"></i>
@@ -529,15 +538,21 @@
         <div class="sidebar_list2">
           <i class="fa fa-times light_text"></i>
           <ul>
-            <li><a href="#"><p class="light_text">Settings and Privacy</p></a></li>
-            <li><a href="#"><p class="light_text">Help Center</p></a></li>
-            <li><a href="#"><p class="light_text">Log Out</p></a></li>
+            <li>
+              <a href="#"><p class="light_text">Settings and Privacy</p></a>
+            </li>
+            <li>
+              <a href="#"><p class="light_text">Help Center</p></a>
+            </li>
+            <li>
+              <a href="#"><p class="light_text">Log Out</p></a>
+            </li>
           </ul>
         </div>
 
         <!-- darkmode -->
         <div class="dark_mode">
-          <p class="light_text">Dark Mode</p>
+          <p><span class="light_text">Dark Mode</span></p>
           <div class="toggle">
             <div class="circle"></div>
           </div>

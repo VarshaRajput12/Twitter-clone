@@ -30,7 +30,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr min-content;
-  display: none;
+  display: grid;
   /* =========================== */
 }
 
@@ -396,7 +396,7 @@ i {
 .feeds_page {
   width: 100%;
   height: 100vh;
-  display: block;
+  display: none;
 }
 
 .feeds_nav {
@@ -541,15 +541,20 @@ i {
   grid-column: 2/3;
   grid-row: 1/2;
   background-color: var(--second-color);
-  margin-top: 1.5rem;
+  padding-top: 5rem;
 }
 
 .header_top {
+  position: fixed;
+  top: 0;
+  opacity: 0.9;
+  width: 60rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 0.1rem solid var(--border-color);
   padding: 1.5rem;
+  background-color: var(--second-color);
 }
 
 .header_top h4 {
@@ -562,9 +567,15 @@ i {
 
 .header_post {
   display: flex;
-  align-items: center;
-  padding: 1rem;
+  flex-direction: column;
+  /* align-items: center; */
+  padding: 2rem;
   border-bottom: 0.1rem solid var(--border-color);
+}
+.header_img_wrapper{
+  display: flex;
+  align-items: center;
+  padding: 2rem;
 }
 
 .header_img_wrapper img {
@@ -575,19 +586,53 @@ i {
   object-fit: cover;
 }
 
-.header_post input {
-  width: 35rem;
-  height: 3rem;
-  border: 0.1rem solid #d6e1e9;
+.header_post textarea {
+  width: 100%;
+  height: 6rem;
+  border: none;
+  outline: none;
+  font-size: 1.8rem;
   border-radius: 3rem;
-  background-color: #d6e1e9;
+  background-color: transparent;
+  overflow-y: scroll;
   padding: 0.4rem 1.5rem;
 }
 
-.header_post i {
+::-webkit-scrollbar{
+  width: 0;
+}
+
+.header_post .bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.1rem solid var(--border-color);
+}
+
+.header_post .bottom button{
+  width: 8rem;
+  padding: 1rem 1.5rem;
+  margin-top: 2rem;
+  background-color: var(--main-color);
+  color: var(--second-color);
+  border: 0.1rem solid var(--main-color);
+  border-radius: 3rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  opacity: 0.4;
+}
+
+.header_post .icons {
   font-size: 2.5rem;
   color: var(--main-color);
-  margin: 2rem;
+  margin: 2rem 0 0 2rem;
+  /* padding-top: 2rem; */
+  flex-direction: row;
+}
+.header_post .icons i{
+  margin: 0 1rem;
 }
 
 .posts {
@@ -661,7 +706,7 @@ i {
 
 .follow {
   position: fixed;
-  top: 1.5rem;
+  top: 0;
   left: 65%;
   background-color: var(--second-color);
   width: 35rem;
