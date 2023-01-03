@@ -26,7 +26,7 @@ const settigs_wrapper = document.querySelector(".settigs_wrapper");
 const settigs_x = document.querySelector(".sidebar_list2 i");
 const textarea = document.querySelector(".textarea");
 const textareaBtn = document.querySelector(".bottom button");
-
+const tweetContainer = document.querySelector(".maincontainer");
 
 const goToLoginPage = () => {
   mainPage.style.display = "none";
@@ -105,12 +105,10 @@ modal_input.addEventListener("keydown", (e) => {
   }
 });
 
-
 // feed_content textarea
 const changeOpacity2 = (x) => {
   textareaBtn.style.opacity = x;
 };
-
 
 textarea.addEventListener("keypress", (e) => {
   if (e.target.value !== "") {
@@ -128,17 +126,16 @@ textarea.addEventListener("keydown", (e) => {
 // sidebar
 
 more.addEventListener("click", () => {
-  settigs_wrapper.style.display = "block"
+  settigs_wrapper.style.display = "block";
 });
 
 settigs_x.addEventListener("click", () => {
-  settigs_wrapper.style.display = "none"
+  settigs_wrapper.style.display = "none";
 });
 
 // profile
 profile.addEventListener("click", () => {
   sidebar_wrapper.classList.add("sidebar_wrapper_display");
- 
 });
 
 xBtn.addEventListener("click", () => {
@@ -167,3 +164,47 @@ toggle.addEventListener("click", () => {
     border.classList.toggle("border-color");
   });
 });
+
+const renderDetails = async () => {
+  let date = new Date();
+  const res = await fetch(
+    `https://twitter-backend-6yot.onrender.com/tweet/recent?offset=1`
+  ); // Fetching Specific Movie Details using id
+  console.log(res);
+  const tweetData = await res.json();
+  console.log(tweetData);
+  const template = `<div class="post border">
+  <div class="user_avatar">
+    <img
+      src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      alt="user"
+    />
+  </div>
+
+  <div class="post_content">
+    <div class="post_user_info light_text">
+      <h4>Suhana</h4>
+      <i class="fa fa-check-circle"></i>
+      <span>@suhana12</span>
+      <p>${date.toDateString()}</p>
+    </div>
+    <p class="post_text light_text">${textarea.value}</p>
+    <div class="post_img">
+      <img
+        src="https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTk3fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+        alt="post_img"
+      />
+    </div>
+    <div class="post_icons">
+      <i class="fa fa-comment"></i>
+      <i class="fa fa-retweet"></i>
+      <i class="fa fa-heart"></i>
+      <i class="fa fa-share-alt"></i>
+    </div>
+  </div>
+</div> `;
+  tweetContainer.innerHTML += template;
+  textarea.value = "";
+};
+
+textareaBtn.addEventListener("click", renderDetails);
