@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --main-color: #1aa1f5;
+    --second-color: #fff;
+    --border-color: #eee;
+  }
+
+.mainContainer{
+    background-color: #fff;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+    width: 35rem;
+    height: 40rem;
+    margin: 3rem 5rem;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.mainContainer .content{
+    width: 22rem;
+    margin: 0 auto;
+}
+.mainContainer .fa-xmark{
+  float: left; 
+}
+.mainContainer .fa-twitter{
+  font-size: 2rem; 
+  color: #1aa1f5;
+  margin: 1rem;
+}
+
+.content .google, .content .apple{
+   display: flex;
+   justify-content: center;
+   box-shadow: 0 0 1px gray;
+   /* border: 0.1rem solid rgb(227, 220, 220); */
+   border-radius: 2rem;
+   padding: 0.4rem 0;
+   margin: 1.5rem 0;
+   cursor: pointer;
+}
+
+.content .google img, .content .apple img{
+    object-fit: contain;
+    width: 1.2rem;
+    margin-right: 0.6rem;
+}
+
+.mainContainer .email{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.mainContainer .email input{
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 2px gray;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+}
+
+.or{
+    position: relative;
+    text-align: center;
+}
+span{
+    background-color: #fff;
+    padding: 0.2rem;
+    position: absolute;
+    top: -10px;
+}

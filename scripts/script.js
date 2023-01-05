@@ -165,28 +165,71 @@ toggle.addEventListener("click", () => {
   });
 });
 
-const renderDetails = async () => {
-  let date = new Date();
-  const res = await fetch(
-    `https://twitter-backend-6yot.onrender.com/tweet/recent?offset=1`
-  ); // Fetching Specific Movie Details using id
-  console.log(res);
-  const tweetData = await res.json();
-  console.log(tweetData);
-  const template = `<div class="post border">
+// const renderDetails = async () => {
+//   let date = new Date();
+//   const res = await fetch(
+//     `https://twitter-backend-6yot.onrender.com/tweet/recent?offset=1`
+//   ); // Fetching Specific Movie Details using id
+//   console.log(res);
+//   const tweetData = await res.json();
+//   console.log(tweetData);
+//   const template = `<div class="post border">
+//   <div class="user_avatar">
+//     <img
+//       src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+//       alt="user"
+//     />
+//   </div>
+
+//   <div class="post_content">
+//     <div class="post_user_info light_text">
+//       <h4>Suhana</h4>
+//       <i class="fa fa-check-circle"></i>
+//       <span>@suhana12</span>
+//       <p>${date.toDateString()}</p>
+//     </div>
+//     <p class="post_text light_text">${textarea.value}</p>
+//     <div class="post_img">
+//       <img
+//         src="https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTk3fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+//         alt="post_img"
+//       />
+//     </div>
+//     <div class="post_icons">
+//       <i class="fa fa-comment"></i>
+//       <i class="fa fa-retweet"></i>
+//       <i class="fa fa-heart"></i>
+//       <i class="fa fa-share-alt"></i>
+//     </div>
+//   </div>
+// </div> `;
+//   tweetContainer.innerHTML += template;
+//   textarea.value = "";
+// };
+
+// textareaBtn.addEventListener("click", renderDetails);
+
+
+
+
+
+
+const renderPost = async post => {
+  post.reactorImage ||= 'https://wallpaperaccess.com/full/2514661.jpg';
+  const html = `
+  <div class="post border">
   <div class="user_avatar">
     <img
-      src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTc0fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
       alt="user"
     />
   </div>
 
   <div class="post_content">
     <div class="post_user_info light_text">
-      <h4>Suhana</h4>
+      <h4>haary</h4>
       <i class="fa fa-check-circle"></i>
-      <span>@suhana12</span>
-      <p>${date.toDateString()}</p>
+      <span>@harry123</span>
     </div>
     <p class="post_text light_text">${textarea.value}</p>
     <div class="post_img">
@@ -202,9 +245,85 @@ const renderDetails = async () => {
       <i class="fa fa-share-alt"></i>
     </div>
   </div>
-</div> `;
-  tweetContainer.innerHTML += template;
-  textarea.value = "";
+</div>
+  `;
+  // const postsContainer = document.querySelector('.posts');
+  tweetContainer.insertAdjacentHTML('afterbegin', html);
 };
 
-textareaBtn.addEventListener("click", renderDetails);
+const getPost = async function () {
+  const result = await fetch(
+    'https://linkbackendposts-production.up.railway.app/link/getAllposts',
+    { method: 'POST' }
+  );
+  postsData = await result.json();
+  postsData.map(post => {
+    renderPost(post);
+  });
+};
+getPost();
+
+
+
+// imageInput.addEventListener('change', function (e) {
+//   const reader = new FileReader();
+//   reader.addEventListener('load', () => {
+//     uploadedImage = reader.result;
+//   });
+//   reader.readAsDataURL(this.files[0]);
+// });
+
+// const creatPost = async obj => {
+//   let response = await fetch(
+//     'https://linkbackendposts-production.up.railway.app/link/createpost',
+//     {
+//       method: 'POST', // or 'PUT'
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(obj),
+//     }
+//   );
+//   let result = await response.json();
+
+//   postsData.unshift(result);
+//   return result;
+// };
+
+// btnPost.addEventListener('click', async () => {
+//   if (postText.value) {
+//     const obj = {
+//       reactorImage: '',
+//       reactorName: displayName,
+//       authorImage: 'https://wallpaperaccess.com/full/2514661.jpg',
+//       authorName: displayName,
+//       jobTitle: 'CS Professor at Harward University',
+//       postTime: '1s',
+//       postDescription: postText.value,
+//       image: '',
+//       reactionCount: 0,
+//       repostCount: 0,
+//       comments: [],
+//     };
+//     let result = await creatPost(obj);
+//     console.log(result);
+//     renderPost(result);
+//     postPopup.classList.add('display_block');
+//     overlay.classList.add('hidden');
+//     document.body.classList.remove('disable-scroll');
+
+//     postText.value = '';
+//   } else {
+//     alert('Post description cannot be empty.');
+//   }
+// });
+
+// const updatePost = async (url, obj) => {
+//   let response = await fetch(url, {
+//     method: 'PATCH', // or 'PUT'
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(obj),
+//   });
+// };
