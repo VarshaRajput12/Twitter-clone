@@ -1,46 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign in</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="/styles/login.css" />
-  </head>
-  <body>
-    <div class="mainContainer">
-      <i class="fa-solid fa-xmark"></i>
-      <i class="fa-brands fa-twitter"></i>
-      <div class="content">
-        <h1>Sign in to Twitter</h1>
-        <div class="google">
-          <img src="/images/googl.png" alt="google"/>
-          <h4>Sign in with Google</h4>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <section class="login_page">
+        <nav class="login_page_nav">
+          <ul>
+            <li>
+              <a href="#"><i class="fa-brands fa-twitter"> </i> Home</a>
+            </li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Language: English</a></li>
+          </ul>
+        </nav>
+        <div class="login">
+          <div class="login_content">
+            <h2>Log In To Twitter</h2>
+            <form class="login_form">
+              <input
+                type="text"
+                class="login_user_info"
+                placeholder="Phone, Email, or Username"
+              />
+              <input
+                type="password"
+                class="login_password"
+                placeholder="Password"
+              />
+              <div>
+                <button type="button  " class="login_form_btn">Log In</button>
+                <input type="checkbox" class="login_form_checkbox" id="check" />
+                <label for="check">Remember Me</label>
+                <a href="#">Forget Password?</a>
+              </div>
+            </form>
+          </div>
+          <footer class="login_footer">
+            <p>New To Twitter? <a href="#">Sign Up Now</a></p>
+            <p>
+              Already using Twitter via text message?
+              <a href="#">Activate your account</a>
+            </p>
+          </footer>
         </div>
-        <div class="apple">
-          <img src="/images/apple.png" alt="apple" />
-          <h4>Sign in with Apple</h4>
-        </div>
-       <div class="or">
-        <hr>
-        <span>or</span>
-       </div>
-        <div class="email">
-          <input type="text" placeholder="Phone, email, or username" />
-          <button type="button">Next</button>
-          <button type="button">Forget password</button>
-        </div>
-        <p>Don't hane an account?<a href="#">Sign up</a></p>
-      </div>
-    </div>
+      </section>
 
-    <script src="/scripts/script.js"></script>
-  </body>
+      <!-- login modal -->
+
+    <div class="login_modal">
+        <i class="fa fa-times"></i>
+        <p>
+          The usename and password you entered did not match our records. please
+          double check and try again.
+        </p>
+      </div>
+  
+      <!--end of login modal -->
+ 
+</body>
 </html>

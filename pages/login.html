@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/styles/login.css" />
+  </head>
+  <body>
+    <div class="outerContainer">
+      <div class="mainContainer">
+        <i class="fa-solid fa-xmark"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <div class="content">
+          <h1>Sign in to Twitter</h1>
+          <div class="google">
+            <img src="/images/googl.png" alt="google" />
+            <h4>Sign in with Google</h4>
+          </div>
+          <div class="apple">
+            <img src="/images/apple.png" alt="apple" />
+            <h4>Sign in with Apple</h4>
+          </div>
+          <div class="or">
+            <hr />
+            <span>or</span>
+          </div>
+          <div class="email">
+            <input type="text" placeholder="Phone, email, or username" id="one"/>
+            <!-- <input type="text" placeholder="Phone, email" id="two"/>
+            <input type="text" placeholder="Phone" id="three"/> -->
+            <button type="button" class="next" id="nextBtn" onclick="acceptData()">Next</button>
+            <button type="button" class="forgetPassword">
+              Forget password ?
+            </button>
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/scripts/script.js"></script>
+  </body>
+</html>

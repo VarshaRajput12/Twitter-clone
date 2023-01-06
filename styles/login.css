@@ -6,22 +6,17 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-
-:root {
-    --main-color: #1aa1f5;
-    --second-color: #fff;
-    --border-color: #eee;
-  }
-
+  
 .mainContainer{
     background-color: #fff;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
     width: 35rem;
     height: 40rem;
-    margin: 3rem 5rem;
+    margin: 3rem auto;
     border-radius: 1rem;
     padding: 1.5rem;
     text-align: center;
+    
 }
 
 .mainContainer .content{
@@ -41,7 +36,6 @@
    display: flex;
    justify-content: center;
    box-shadow: 0 0 1px gray;
-   /* border: 0.1rem solid rgb(227, 220, 220); */
    border-radius: 2rem;
    padding: 0.4rem 0;
    margin: 1.5rem 0;
@@ -64,18 +58,59 @@
     padding: 1rem;
     outline: none;
     border: none;
-    box-shadow: 0 0 2px gray;
+    box-shadow: 0 0 1px gray;
     margin: 1.5rem 0;
     border-radius: 4px;
+    font-size: 1rem;
+    
+}
+.mainContainer .email input::placeholder{
+    color: rgb(104, 101, 101);
 }
 
 .or{
+    margin: 2rem 0 0.5rem 0;
     position: relative;
     text-align: center;
+    
 }
 span{
     background-color: #fff;
     padding: 0.2rem;
     position: absolute;
-    top: -10px;
+    top: -15px;
+}
+
+.email button{
+    border-radius: 2rem;
+    padding: 0.4rem 0;
+    margin: 1rem 0;
+    cursor: pointer;
+ }
+
+ 
+ .email .next{
+     background-color: #10171e;
+     color: #fff;
+     font-weight: bold;
+     font-size: 1rem;
+    }
+    
+    .email .next:hover{
+        background-color: #262f38;
+    }
+    .email .forgetPassword{
+        border: none;
+        background-color: transparent;
+        box-shadow: 0 0 1px gray;
+        font-weight: bolder;
+    }
+
+    .email .forgetPassword:hover{
+       background-color: #eef4f8;
+    }
+
+.email p a{
+    text-decoration: none;
+    color: #1aa1f5;
 }
