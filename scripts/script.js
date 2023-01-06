@@ -6,7 +6,7 @@ const middleContent = document.querySelector(".middle_content");
 const btnTop = document.querySelector(".top_btn");
 const newsFeedPage = document.querySelector(".feeds_page");
 const loginModal = document.querySelector(".login_modal");
-const modalX = document.querySelector(".login_modal i");
+// const modalX = document.querySelector(".login_modal i");
 const loginFormBtn = document.querySelector(".login_form_btn");
 const post_btn = document.querySelector(".post_btn");
 const modal_wrapper = document.querySelector(".modal_wrapper");
@@ -117,22 +117,22 @@ btnTop.addEventListener("click", () => {
 });
 
 // login page
-modalX.addEventListener("click", () => {
-  loginModal.style.display = "none";
-});
+// modalX.addEventListener("click", () => {
+//   loginModal.style.display = "none";
+// });
 
-loginFormBtn.addEventListener("click", () => {
-  const login_user_info = document.querySelector(".login_user_info");
-  const login_password = document.querySelector(".login_password");
+// loginFormBtn.addEventListener("click", () => {
+//   const login_user_info = document.querySelector(".login_user_info");
+//   const login_password = document.querySelector(".login_password");
 
-  if (login_user_info.value !== "" && login_password.value !== "") {
-    loginPage.style.display = "none";
-    newsFeedPage.style.display = "block";
-  } else {
-    goToLoginPage();
-    loginModal.style.display = "block";
-  }
-});
+//   if (login_user_info.value !== "" && login_password.value !== "") {
+//     loginPage.style.display = "none";
+//     newsFeedPage.style.display = "block";
+//   } else {
+//     goToLoginPage();
+//     loginModal.style.display = "block";
+//   }
+// });
 
 // news feed page
 // post modal
@@ -229,165 +229,178 @@ toggle.addEventListener("click", () => {
   });
 });
 
-const renderDetails = async () => {
-  let date = new Date();
-  const res = await fetch(
-    `https://twitter-backend-6yot.onrender.com/tweet/recent?offset=1`
-  ); // Fetching Specific Movie Details using id
-  console.log(res);
-  const tweetData = await res.json();
-  console.log(tweetData);
-  const template = `<div class="post border">
-  <div class="user_avatar">
-    <img
-      src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-      alt="user"
-    />
-  </div>
-
-  <div class="post_content">
-    <div class="post_user_info light_text">
-      <h4>Suhana</h4>
-      <i class="fa fa-check-circle"></i>
-      <span>@suhana12</span>
-      <p>${date.toDateString()}</p>
-    </div>
-    <p class="post_text light_text">${textarea.value}</p>
-    <div class="post_img">
-      <img
-        src="https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTk3fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-        alt="post_img"
-      />
-    </div>
-    <div class="post_icons">
-      <i class="fa fa-comment"></i>
-      <i class="fa fa-retweet"></i>
-      <i class="fa fa-heart"></i>
-      <i class="fa fa-share-alt"></i>
-    </div>
-  </div>
-</div> `;
-  tweetContainer.innerHTML += template;
-  textarea.value = "";
-};
-
-textareaBtn.addEventListener("click", renderDetails);
 
 
+let tweetOffset = 0;
+let runningCriticalFunction = false;
 
-
-
-
-const renderPost = async post => {
-  post.reactorImage ||= 'https://wallpaperaccess.com/full/2514661.jpg';
-  const html = `
-  <div class="post border">
-  <div class="user_avatar">
-    <img
-      src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTc0fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-      alt="user"
-    />
-  </div>
-
-  <div class="post_content">
-    <div class="post_user_info light_text">
-      <h4>haary</h4>
-      <i class="fa fa-check-circle"></i>
-      <span>@harry123</span>
-    </div>
-    <p class="post_text light_text">${textarea.value}</p>
-    <div class="post_img">
-      <img
-        src="https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTk3fHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-        alt="post_img"
-      />
-    </div>
-    <div class="post_icons">
-      <i class="fa fa-comment"></i>
-      <i class="fa fa-retweet"></i>
-      <i class="fa fa-heart"></i>
-      <i class="fa fa-share-alt"></i>
-    </div>
-  </div>
-</div>
-  `;
-  const postsContainer = document.querySelector('.posts');
-  tweetContainer.insertAdjacentHTML('afterbegin', html);
-};
-
-const getPost = async function () {
-  const result = await fetch(
-    'https://linkbackendposts-production.up.railway.app/link/getAllposts',
-    { method: 'POST' }
-  );
-  postsData = await result.json();
-  postsData.map(post => {
-    renderPost(post);
-  });
-};
-getPost();
-
-
-
-imageInput.addEventListener('change', function (e) {
-  const reader = new FileReader();
-  reader.addEventListener('load', () => {
-    uploadedImage = reader.result;
-  });
-  reader.readAsDataURL(this.files[0]);
-});
-
-const creatPost = async obj => {
-  let response = await fetch(
-    'https://linkbackendposts-production.up.railway.app/link/createpost',
-    {
-      method: 'POST', // or 'PUT'
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(obj),
+async function getTweetsAndInsertHTML() {
+    if(runningCriticalFunction) {
+        return;
     }
-  );
-  let result = await response.json();
+    runningCriticalFunction = true;
+    const result = await fetch(`https://twitter-backend-6yot.onrender.com/tweet/recent?offset=${tweetOffset}`); // Paginated API 
 
-  postsData.unshift(result);
-  return result;
-};
+    const tweets = await result.json();
 
-btnPost.addEventListener('click', async () => {
-  if (postText.value) {
-    const obj = {
-      reactorImage: '',
-      reactorName: displayName,
-      authorImage: 'https://wallpaperaccess.com/full/2514661.jpg',
-      authorName: displayName,
-      jobTitle: 'CS Professor at Harward University',
-      postTime: '1s',
-      postDescription: postText.value,
-      image: '',
-      reactionCount: 0,
-      repostCount: 0,
-      comments: [],
-    };
-    let result = await creatPost(obj);
-    console.log(result);
-    renderPost(result);
-    postPopup.classList.add('display_block');
-    overlay.classList.add('hidden');
-    document.body.classList.remove('disable-scroll');
+    console.log(tweets.data);
 
-    postText.value = '';
-  } else {
-    alert('Post description cannot be empty.');
-  }
-});
+    tweetOffset = tweetOffset + tweets.data.length;
 
-const updatePost = async (url, obj) => {
-  let response = await fetch(url, {
-    method: 'PATCH', // or 'PUT'
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(obj),
-  });
-};
+    tweetContainer.insertAdjacentHTML('beforeend', tweets.data.map((tweet) => {
+        const date = new Date(tweet.creationDatetime);
+        
+        return `<div class="post border" id=${tweet._id}>
+        <div class="user_avatar">
+          <img
+            src="https://source.unsplash.com/45x45/?boy"
+            alt="user"
+          />
+        </div>
+
+        <div class="post_content">
+          <div class="post_user_info light_text">
+            <h4>Harry</h4>
+            <i class="fa fa-check-circle"></i>
+            <span>@harry123</span>
+          </div>
+          <button data-id=${tweet._id} class="tweet-edit" id="tweet-edit">
+                    Edit
+                </button>
+                <button data-id=${tweet._id} class="tweet-delete" id="tweet-delete">
+                    Delete
+                </button>
+          <p class="post_text light_text" id=${tweet._id}>${tweet.title}
+          </p>
+          <div class="post_img">
+            <img
+              src="https://source.unsplash.com/480x360/?books"
+              alt="post_img"
+            />
+          </div>
+          <div class="post_icons">
+            <i class="fa fa-comment"></i>
+            <i class="fa fa-retweet"></i>
+            <i class="fa fa-heart"></i>
+            <i class="fa fa-share-alt"></i>
+          </div>
+        </div>
+      </div>`
+    }).join(""))
+    runningCriticalFunction = false;
+}
+
+window.onload = async () => {
+    getTweetsAndInsertHTML();
+}
+
+document.addEventListener('click', async (event) => {
+    if(event.target.classList.contains('post-btn')) {
+        const tweetText = document.querySelector('.textarea').value;
+
+        const data = {
+            title: tweetText,
+            text: "Random Value",
+            userId: "12345"
+        }
+        
+        const tweetResponse = await fetch('https://twitter-backend-6yot.onrender.com/tweet/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+
+        const tweet = await tweetResponse.json();
+
+        if(tweet.status !== 200) {
+            alert(tweet.message);
+            return;
+        }
+
+        document.querySelector('.textarea').value = "";
+        alert(tweet.message);
+    }
+
+    if(event.target.classList.contains('tweet-delete')) {
+
+        if(confirm("Are you sure you want to delete this tweet?")) {
+            const tweetId = event.target.getAttribute('data-id');
+
+            const data = {
+                tweetId,
+                userId: "12345"
+            };
+
+            const response = await fetch('https://twitter-backend-6yot.onrender.com/tweet/delete', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+
+            const result = await response.json();
+
+            if(result.status !== 200) {
+                alert(result.message);
+                return;
+            }
+            
+            alert("Tweet deleted successfuly");
+            document.getElementById(tweetId).remove();
+        }
+    }
+
+    if(event.target.classList.contains('tweet-edit')) {
+        const tweetId = event.target.getAttribute('data-id');
+
+        const span = document.getElementsByClassName("post_text" + tweetId);
+
+        const tweetText = prompt("Enter new tweet text", span.innerText);
+
+        const data = {
+            tweetId,
+            title: tweetText,
+            text: "Random value",
+            userId: "12345"
+        }
+
+        const response = await fetch('https://twitter-backend-6yot.onrender.com/tweet/update', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+
+        const result = await response.json();
+
+        if(result.status !== 200) {
+            alert(result.message);
+            return;
+        }
+
+        alert("Updated Successfully");
+        span.innerText = tweetText;
+    }
+
+    // if(event.target.classList.contains('show_more')) {
+    //     getTweetsAndInsertHTML();
+    // }
+}) 
+
+window.addEventListener('scroll', () => {
+    const {
+        scrollTop,
+        scrollHeight,
+        clientHeight
+    } = document.documentElement;
+
+    // console.log(scrollTop, scrollHeight, clientHeight);
+
+    if((scrollTop + clientHeight) >= (scrollHeight - 20)) {
+        getTweetsAndInsertHTML();
+    }
+})
