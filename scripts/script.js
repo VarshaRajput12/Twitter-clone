@@ -6,7 +6,7 @@ const middleContent = document.querySelector(".middle_content");
 const btnTop = document.querySelector(".top_btn");
 const newsFeedPage = document.querySelector(".feeds_page");
 const loginModal = document.querySelector(".login_modal");
-// const modalX = document.querySelector(".login_modal i");
+const modalX = document.querySelector(".login_modal i");
 const loginFormBtn = document.querySelector(".login_form_btn");
 const post_btn = document.querySelector(".post_btn");
 const modal_wrapper = document.querySelector(".modal_wrapper");
@@ -27,62 +27,7 @@ const settigs_x = document.querySelector(".sidebar_list2 i");
 const textarea = document.querySelector(".textarea");
 const textareaBtn = document.querySelector(".bottom button");
 const tweetContainer = document.querySelector(".maincontainer");
-const one = document.querySelector("#one");
-const two = document.querySelector("#two");
-const three = document.querySelector("#three");
 const nextBtn = document.querySelector("#nextBtn");
-
-// let userDetails = [];
-// let count = 0;
-
-// let acceptData = () => {
-//   let details = {
-//       id: count++,
-//       Name: one.value,
-//       Email: two.value,
-//       // UserId: userId.value,
-//       Password: three.value,
-//   };
-
-  
-//   userDetails.push(details);
-//   localStorage.setItem("UserDetails", JSON.stringify(userDetails));
- 
-  
-//   // resetForm();
-// };
-
-
-// let acceptData = () => {
-//     var name = one.value;
-//     var email = two.value;
-//     var no = three.value;
-//     localStorage.setItem("name1", name);
-//     localStorage.setItem("email1", email);
-//     localStorage.setItem("number1", no);
-//     };
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const login_btn = document.querySelector("#Log_in");
 console.log(login_btn)
@@ -117,21 +62,17 @@ btnTop.addEventListener("click", () => {
 });
 
 // login page
+// const login_user_info = document.querySelector(".login_user_info").value;
+// const login_password = document.querySelector(".login_password").value;
+
 // modalX.addEventListener("click", () => {
 //   loginModal.style.display = "none";
 // });
 
 // loginFormBtn.addEventListener("click", () => {
-//   const login_user_info = document.querySelector(".login_user_info");
-//   const login_password = document.querySelector(".login_password");
-
-//   if (login_user_info.value !== "" && login_password.value !== "") {
 //     loginPage.style.display = "none";
 //     newsFeedPage.style.display = "block";
-//   } else {
-//     goToLoginPage();
-//     loginModal.style.display = "block";
-//   }
+ 
 // });
 
 // news feed page
@@ -250,7 +191,7 @@ async function getTweetsAndInsertHTML() {
     tweetContainer.insertAdjacentHTML('beforeend', tweets.data.map((tweet) => {
         const date = new Date(tweet.creationDatetime);
         
-        return `<div class="post border" id=${tweet._id}>
+        return ` <div class="post border" id=${tweet._id}>
         <div class="user_avatar">
           <img
             src="https://source.unsplash.com/45x45/?boy"
@@ -260,21 +201,24 @@ async function getTweetsAndInsertHTML() {
 
         <div class="post_content">
           <div class="post_user_info light_text">
-            <h4>Harry</h4>
+            <h4>Suhana</h4>
             <i class="fa fa-check-circle"></i>
-            <span>@harry123</span>
+            <span>@suhana12</span>
           </div>
+          <div class="editDelete">
           <button data-id=${tweet._id} class="tweet-edit" id="tweet-edit">
-                    Edit
+          <i class="fa-regular fa-pen-to-square"></i>
                 </button>
                 <button data-id=${tweet._id} class="tweet-delete" id="tweet-delete">
-                    Delete
-                </button>
-          <p class="post_text light_text" id=${tweet._id}>${tweet.title}
+                <i class="fa-solid fa-xmark"></i>
+                </button></div>
+          <p class="post_text light_text">
+          <span id='span-${tweet._id}'>${tweet.title}
+          </span>
           </p>
           <div class="post_img">
             <img
-              src="https://source.unsplash.com/480x360/?books"
+              src="https://source.unsplash.com/480x360/?flowers"
               alt="post_img"
             />
           </div>
@@ -353,42 +297,42 @@ document.addEventListener('click', async (event) => {
         }
     }
 
+   
+
     if(event.target.classList.contains('tweet-edit')) {
-        const tweetId = event.target.getAttribute('data-id');
+      const tweetId = event.target.getAttribute('data-id');
 
-        const span = document.getElementsByClassName("post_text" + tweetId);
+      const span = document.getElementById('span-' + tweetId);
 
-        const tweetText = prompt("Enter new tweet text", span.innerText);
+      const tweetText = prompt("Enter new tweet text", span.innerText);
 
-        const data = {
-            tweetId,
-            title: tweetText,
-            text: "Random value",
-            userId: "12345"
-        }
+      const data = {
+          tweetId,
+          title: tweetText,
+          text: "Random value",
+          userId: "12345"
+      }
 
-        const response = await fetch('https://twitter-backend-6yot.onrender.com/tweet/update', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
+      const response = await fetch('https://twitter-backend-6yot.onrender.com/tweet/update', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+      })
 
-        const result = await response.json();
+      const result = await response.json();
 
-        if(result.status !== 200) {
-            alert(result.message);
-            return;
-        }
+      if(result.status !== 200) {
+          alert(result.message);
+          return;
+      }
 
-        alert("Updated Successfully");
-        span.innerText = tweetText;
-    }
-
-    // if(event.target.classList.contains('show_more')) {
-    //     getTweetsAndInsertHTML();
-    // }
+      alert("Updated Successfully");
+      span.innerText = tweetText;
+      
+  }
+    
 }) 
 
 window.addEventListener('scroll', () => {

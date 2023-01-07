@@ -30,8 +30,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr min-content;
-  display: none;
-  /* =========================== */
+  /* display: none; */
 }
 
 i {
@@ -41,8 +40,6 @@ i {
 /* ----------------left-------------- */
 
 .left {
-  /* grid-column: 1/2; */
-  /* grid-row: 1/2; */
   background-color: var(--main-color);
   display: flex;
   justify-content: center;
@@ -215,7 +212,7 @@ i {
   grid-template-columns: minmax(5rem, 1fr) 2fr minmax(5rem, 1fr);
   grid-template-rows: repeat(2, min-content) 1fr;
   grid-row-gap: 1.5rem;
-
+  /* display: none; */
 }
 
 .login_page_nav {
@@ -396,7 +393,7 @@ i {
 .feeds_page {
   width: 100%;
   height: 100vh;
-  display: block;
+  display: none;
 }
 
 .feeds_nav {
@@ -407,9 +404,6 @@ i {
   display: flex;
   flex-direction: column;
   border-right: 0.1rem solid var(--border-color);
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3); */
 }
 
 .feeds_nav .dove i {
@@ -444,9 +438,6 @@ i {
   border-radius: 3rem;
 }
 
-/* .icons a:hover{
-  background-color:#f1f3f5 ;
-} */
 
 .icons a i {
   margin-right: 2rem;
@@ -561,6 +552,18 @@ i {
 .header_top i {
   font-size: 2.2rem;
   color: var(--main-color);
+}
+.editDelete{
+  margin: -4rem 0 2rem 43rem;
+
+}
+
+.tweet-edit, .tweet-delete{
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
 .header_post {
@@ -789,17 +792,18 @@ i {
 /* -----post button---- */
 
 .post_btn {
-  width: 20rem;
+  width: 5rem;
+  height: 5rem;
   padding: 1.2rem 1rem;
   background-color: var(--main-color);
   color: var(--second-color);
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: bolder;
   border: 0.1rem solid var(--main-color);
-  border-radius: 3rem;
+  border-radius: 50%;
   box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  margin-left: 14rem;
+  margin-left: 15rem;
   transition: background-color 0.3s;
 }
 
@@ -1179,6 +1183,29 @@ i {
   .login_modal {
     width: 60rem;
   }
+
+  .post_btn{
+    margin-left: 4rem;
+  }
+
+  .icons{
+    margin-left: 5rem;
+  }
+  .feeds_nav .dove i{
+    margin-left: 5rem;
+  }
+
+  .feeds_nav{
+    width: 32%;
+  }
+  .follow{
+    left: 75%;
+   
+  }
+
+  .feeds_content{
+    padding-left: 27rem;
+  }
 }
 
 @media only screen and (max-width: 1100px) {
@@ -1213,6 +1240,21 @@ i {
   .main_page_footer {
     grid-row: 3/4;
   }
+
+  .follow{
+    display: none;
+  }
+  .user{
+    display: none;
+  }
+  .icons a{
+    margin: 2rem 0;
+  }
+  
+  .feeds_content{
+    margin-left: -2rem;
+  }
+  
 }
 
 @media only screen and (max-width: 900px) {
@@ -1226,6 +1268,29 @@ i {
   .login_modal {
     width: 50rem;
   }
+  .feeds_content{
+    margin-left: 0;
+    /* background-color: #1584c9; */
+  }
+  .feeds_nav{
+    width: 14rem;
+  }
+  .icons a p{
+    display: none;
+  }
+  .icons a{
+    margin: 3rem 0;
+    font-size: 3rem;
+  }
+
+  
+  .user{
+    display: none;
+  }
+
+  .feeds_content{
+    margin-left: -17rem;
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -1236,6 +1301,20 @@ i {
   .login_modal {
     width: 40rem;
   }
+
+  .icons a{
+    margin: 2.2rem 0;
+  }
+
+  .icons a p{
+    display: none;
+  }
+
+  .user{
+    display: none;
+  }
+
+  
 }
 
 @media only screen and (max-width: 800px) {
@@ -1326,7 +1405,7 @@ i {
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 415px) {
   /* login page */
 
   .login_page_nav ul {
@@ -1348,4 +1427,35 @@ i {
   .login .login_footer {
     padding: 0 5rem;
   }
+  .feeds_content{
+    margin: -32rem;
+    width: 5rem;
+  }
+
+ .feeds_nav{
+  display: none;
+ }
+}
+
+@media only screen and (max-width: 376px){
+
+  .feeds_content{
+    margin: -32rem;
+    width: 5rem;
+  }
+
+ .feeds_nav{
+  display: none;
+ }
+}
+@media only screen and (max-width: 280px){
+
+  .feeds_content{
+    margin: -32rem;
+    width: 5rem;
+  }
+
+ .feeds_nav{
+  display: none;
+ }
 }
