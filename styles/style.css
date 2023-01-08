@@ -438,7 +438,6 @@ i {
   border-radius: 3rem;
 }
 
-
 .icons a i {
   margin-right: 2rem;
 }
@@ -553,12 +552,12 @@ i {
   font-size: 2.2rem;
   color: var(--main-color);
 }
-.editDelete{
+.editDelete {
   margin: -4rem 0 2rem 43rem;
-
 }
 
-.tweet-edit, .tweet-delete{
+.tweet-edit,
+.tweet-delete {
   border: none;
   font-size: 1.5rem;
   border-radius: 50%;
@@ -1184,26 +1183,25 @@ i {
     width: 60rem;
   }
 
-  .post_btn{
+  .post_btn {
     margin-left: 4rem;
   }
 
-  .icons{
+  .icons {
     margin-left: 5rem;
   }
-  .feeds_nav .dove i{
+  .feeds_nav .dove i {
     margin-left: 5rem;
   }
 
-  .feeds_nav{
+  .feeds_nav {
     width: 32%;
   }
-  .follow{
+  .follow {
     left: 75%;
-   
   }
 
-  .feeds_content{
+  .feeds_content {
     padding-left: 27rem;
   }
 }
@@ -1241,20 +1239,19 @@ i {
     grid-row: 3/4;
   }
 
-  .follow{
+  .follow {
     display: none;
   }
-  .user{
+  .user {
     display: none;
   }
-  .icons a{
+  .icons a {
     margin: 2rem 0;
   }
-  
-  .feeds_content{
+
+  .feeds_content {
     margin-left: -2rem;
   }
-  
 }
 
 @media only screen and (max-width: 900px) {
@@ -1268,27 +1265,26 @@ i {
   .login_modal {
     width: 50rem;
   }
-  .feeds_content{
+  .feeds_content {
     margin-left: 0;
     /* background-color: #1584c9; */
   }
-  .feeds_nav{
+  .feeds_nav {
     width: 14rem;
   }
-  .icons a p{
+  .icons a p {
     display: none;
   }
-  .icons a{
+  .icons a {
     margin: 3rem 0;
     font-size: 3rem;
   }
 
-  
-  .user{
+  .user {
     display: none;
   }
 
-  .feeds_content{
+  .feeds_content {
     margin-left: -17rem;
   }
 }
@@ -1302,19 +1298,17 @@ i {
     width: 40rem;
   }
 
-  .icons a{
+  .icons a {
     margin: 2.2rem 0;
   }
 
-  .icons a p{
+  .icons a p {
     display: none;
   }
 
-  .user{
+  .user {
     display: none;
   }
-
-  
 }
 
 @media only screen and (max-width: 800px) {
@@ -1427,35 +1421,33 @@ i {
   .login .login_footer {
     padding: 0 5rem;
   }
-  .feeds_content{
+  .feeds_content {
     margin: -32rem;
     width: 5rem;
   }
 
- .feeds_nav{
-  display: none;
- }
+  .feeds_nav {
+    display: none;
+  }
 }
 
-@media only screen and (max-width: 376px){
-
-  .feeds_content{
+@media only screen and (max-width: 376px) {
+  .feeds_content {
     margin: -32rem;
     width: 5rem;
   }
 
- .feeds_nav{
-  display: none;
- }
+  .feeds_nav {
+    display: none;
+  }
 }
-@media only screen and (max-width: 280px){
-
-  .feeds_content{
+@media only screen and (max-width: 280px) {
+  .feeds_content {
     margin: -32rem;
     width: 5rem;
   }
 
- .feeds_nav{
-  display: none;
- }
+  .feeds_nav {
+    display: none;
+  }
 }

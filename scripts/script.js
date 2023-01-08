@@ -30,12 +30,11 @@ const tweetContainer = document.querySelector(".maincontainer");
 const nextBtn = document.querySelector("#nextBtn");
 
 const login_btn = document.querySelector("#Log_in");
-console.log(login_btn)
+console.log(login_btn);
 
 login_btn.addEventListener("click", () => {
   window.location.href = "/pages/login.html";
 });
-
 
 const goToLoginPage = () => {
   mainPage.style.display = "none";
@@ -72,7 +71,7 @@ btnTop.addEventListener("click", () => {
 // loginFormBtn.addEventListener("click", () => {
 //     loginPage.style.display = "none";
 //     newsFeedPage.style.display = "block";
- 
+
 // });
 
 // news feed page
@@ -128,7 +127,7 @@ textarea.addEventListener("keydown", (e) => {
 });
 // ============================================
 
-sidebar
+sidebar;
 
 more.addEventListener("click", () => {
   settigs_wrapper.style.display = "block";
@@ -170,27 +169,30 @@ toggle.addEventListener("click", () => {
   });
 });
 
-
-
 let tweetOffset = 0;
 let runningCriticalFunction = false;
 
 async function getTweetsAndInsertHTML() {
-    if(runningCriticalFunction) {
-        return;
-    }
-    runningCriticalFunction = true;
-    const result = await fetch(`https://twitter-backend-6yot.onrender.com/tweet/recent?offset=${tweetOffset}`); // Paginated API 
+  if (runningCriticalFunction) {
+    return;
+  }
+  runningCriticalFunction = true;
+  const result = await fetch(
+    `https://twitter-backend-6yot.onrender.com/tweet/recent?offset=${tweetOffset}`
+  ); // Paginated API
 
-    const tweets = await result.json();
+  const tweets = await result.json();
 
-    console.log(tweets.data);
+  console.log(tweets.data);
 
-    tweetOffset = tweetOffset + tweets.data.length;
+  tweetOffset = tweetOffset + tweets.data.length;
 
-    tweetContainer.insertAdjacentHTML('beforeend', tweets.data.map((tweet) => {
+  tweetContainer.insertAdjacentHTML(
+    "beforeend",
+    tweets.data
+      .map((tweet) => {
         const date = new Date(tweet.creationDatetime);
-        
+
         return ` <div class="post border" id=${tweet._id}>
         <div class="user_avatar">
           <img
@@ -229,122 +231,124 @@ async function getTweetsAndInsertHTML() {
             <i class="fa fa-share-alt"></i>
           </div>
         </div>
-      </div>`
-    }).join(""))
-    runningCriticalFunction = false;
+      </div>`;
+      })
+      .join("")
+  );
+  runningCriticalFunction = false;
 }
 
 window.onload = async () => {
-    getTweetsAndInsertHTML();
-}
+  getTweetsAndInsertHTML();
+};
 
-document.addEventListener('click', async (event) => {
-    if(event.target.classList.contains('post-btn')) {
-        const tweetText = document.querySelector('.textarea').value;
+document.addEventListener("click", async (event) => {
+  if (event.target.classList.contains("post-btn")) {
+    const tweetText = document.querySelector(".textarea").value;
 
-        const data = {
-            title: tweetText,
-            text: "Random Value",
-            userId: "12345"
-        }
-        
-        const tweetResponse = await fetch('https://twitter-backend-6yot.onrender.com/tweet/create', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
+    const data = {
+      title: tweetText,
+      text: "Random Value",
+      userId: "12345",
+    };
 
-        const tweet = await tweetResponse.json();
+    const tweetResponse = await fetch(
+      "https://twitter-backend-6yot.onrender.com/tweet/create",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
 
-        if(tweet.status !== 200) {
-            alert(tweet.message);
-            return;
-        }
+    const tweet = await tweetResponse.json();
 
-        document.querySelector('.textarea').value = "";
-        alert(tweet.message);
+    if (tweet.status !== 200) {
+      alert(tweet.message);
+      return;
     }
 
-    if(event.target.classList.contains('tweet-delete')) {
+    document.querySelector(".textarea").value = "";
+    alert(tweet.message);
+  }
 
-        if(confirm("Are you sure you want to delete this tweet?")) {
-            const tweetId = event.target.getAttribute('data-id');
-
-            const data = {
-                tweetId,
-                userId: "12345"
-            };
-
-            const response = await fetch('https://twitter-backend-6yot.onrender.com/tweet/delete', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            })
-
-            const result = await response.json();
-
-            if(result.status !== 200) {
-                alert(result.message);
-                return;
-            }
-            
-            alert("Tweet deleted successfuly");
-            document.getElementById(tweetId).remove();
-        }
-    }
-
-   
-
-    if(event.target.classList.contains('tweet-edit')) {
-      const tweetId = event.target.getAttribute('data-id');
-
-      const span = document.getElementById('span-' + tweetId);
-
-      const tweetText = prompt("Enter new tweet text", span.innerText);
+  if (event.target.classList.contains("tweet-delete")) {
+    if (confirm("Are you sure you want to delete this tweet?")) {
+      const tweetId = event.target.getAttribute("data-id");
 
       const data = {
-          tweetId,
-          title: tweetText,
-          text: "Random value",
-          userId: "12345"
-      }
+        tweetId,
+        userId: "12345",
+      };
 
-      const response = await fetch('https://twitter-backend-6yot.onrender.com/tweet/update', {
-          method: 'POST',
+      const response = await fetch(
+        "https://twitter-backend-6yot.onrender.com/tweet/delete",
+        {
+          method: "POST",
           headers: {
-              'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(data)
-      })
+          body: JSON.stringify(data),
+        }
+      );
 
       const result = await response.json();
 
-      if(result.status !== 200) {
-          alert(result.message);
-          return;
+      if (result.status !== 200) {
+        alert(result.message);
+        return;
       }
 
-      alert("Updated Successfully");
-      span.innerText = tweetText;
-      
-  }
-    
-}) 
-
-window.addEventListener('scroll', () => {
-    const {
-        scrollTop,
-        scrollHeight,
-        clientHeight
-    } = document.documentElement;
-
-    // console.log(scrollTop, scrollHeight, clientHeight);
-
-    if((scrollTop + clientHeight) >= (scrollHeight - 20)) {
-        getTweetsAndInsertHTML();
+      alert("Tweet deleted successfuly");
+      document.getElementById(tweetId).remove();
     }
-})
+  }
+
+  if (event.target.classList.contains("tweet-edit")) {
+    const tweetId = event.target.getAttribute("data-id");
+
+    const span = document.getElementById("span-" + tweetId);
+
+    const tweetText = prompt("Enter new tweet text", span.innerText);
+
+    const data = {
+      tweetId,
+      title: tweetText,
+      text: "Random value",
+      userId: "12345",
+    };
+
+    const response = await fetch(
+      "https://twitter-backend-6yot.onrender.com/tweet/update",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+
+    const result = await response.json();
+
+    if (result.status !== 200) {
+      alert(result.message);
+      return;
+    }
+
+    alert("Updated Successfully");
+    span.innerText = tweetText;
+  }
+});
+
+window.addEventListener("scroll", () => {
+  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+  // console.log(scrollTop, scrollHeight, clientHeight);
+
+  if (scrollTop + clientHeight >= scrollHeight - 20) {
+    getTweetsAndInsertHTML();
+  }
+});

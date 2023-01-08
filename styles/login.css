@@ -1,116 +1,114 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
-  
-.mainContainer{
-    background-color: #fff;
-    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
-    width: 35rem;
-    height: 40rem;
-    margin: 3rem auto;
-    border-radius: 1rem;
-    padding: 1.5rem;
-    text-align: center;
-    
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.mainContainer .content{
-    width: 22rem;
-    margin: 0 auto;
+.mainContainer {
+  background-color: #fff;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  width: 35rem;
+  height: 40rem;
+  margin: 3rem auto;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
 }
-.mainContainer .fa-xmark{
-  float: left; 
+
+.mainContainer .content {
+  width: 22rem;
+  margin: 0 auto;
 }
-.mainContainer .fa-twitter{
-  font-size: 2rem; 
+.mainContainer .fa-xmark {
+  float: left;
+}
+.mainContainer .fa-twitter {
+  font-size: 2rem;
   color: #1aa1f5;
   margin: 1rem;
 }
 
-.content .google, .content .apple{
-   display: flex;
-   justify-content: center;
-   box-shadow: 0 0 1px gray;
-   border-radius: 2rem;
-   padding: 0.4rem 0;
-   margin: 1.5rem 0;
-   cursor: pointer;
+.content .google,
+.content .apple {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 1px gray;
+  border-radius: 2rem;
+  padding: 0.4rem 0;
+  margin: 1.5rem 0;
+  cursor: pointer;
 }
 
-.content .google img, .content .apple img{
-    object-fit: contain;
-    width: 1.2rem;
-    margin-right: 0.6rem;
+.content .google img,
+.content .apple img {
+  object-fit: contain;
+  width: 1.2rem;
+  margin-right: 0.6rem;
 }
 
-.mainContainer .email{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.mainContainer .email {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.mainContainer .email input{
-    width: 100%;
-    padding: 1rem;
-    outline: none;
-    border: none;
-    box-shadow: 0 0 1px gray;
-    margin: 1.5rem 0;
-    border-radius: 4px;
-    font-size: 1rem;
-    
+.mainContainer .email input {
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 1px gray;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+  font-size: 1rem;
 }
-.mainContainer .email input::placeholder{
-    color: rgb(104, 101, 101);
-}
-
-.or{
-    margin: 2rem 0 0.5rem 0;
-    position: relative;
-    text-align: center;
-    
-}
-span{
-    background-color: #fff;
-    padding: 0.2rem;
-    position: absolute;
-    top: -15px;
+.mainContainer .email input::placeholder {
+  color: rgb(104, 101, 101);
 }
 
-.email button{
-    border-radius: 2rem;
-    padding: 0.4rem 0;
-    margin: 1rem 0;
-    cursor: pointer;
- }
+.or {
+  margin: 2rem 0 0.5rem 0;
+  position: relative;
+  text-align: center;
+}
+span {
+  background-color: #fff;
+  padding: 0.2rem;
+  position: absolute;
+  top: -15px;
+}
 
- 
- .email .next{
-     background-color: #10171e;
-     color: #fff;
-     font-weight: bold;
-     font-size: 1rem;
-    }
-    
-    .email .next:hover{
-        background-color: #262f38;
-    }
-    .email .forgetPassword{
-        border: none;
-        background-color: transparent;
-        box-shadow: 0 0 1px gray;
-        font-weight: bolder;
-    }
+.email button {
+  border-radius: 2rem;
+  padding: 0.4rem 0;
+  margin: 1rem 0;
+  cursor: pointer;
+}
 
-    .email .forgetPassword:hover{
-       background-color: #eef4f8;
-    }
+.email .next {
+  background-color: #10171e;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+}
 
-.email p a{
-    text-decoration: none;
-    color: #1aa1f5;
+.email .next:hover {
+  background-color: #262f38;
+}
+.email .forgetPassword {
+  border: none;
+  background-color: transparent;
+  box-shadow: 0 0 1px gray;
+  font-weight: bolder;
+}
+
+.email .forgetPassword:hover {
+  background-color: #eef4f8;
+}
+
+.email p a {
+  text-decoration: none;
+  color: #1aa1f5;
 }
